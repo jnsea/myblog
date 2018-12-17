@@ -56,7 +56,7 @@ public class ApiUserServiceImpl extends ServiceImpl<ApiUserDao, ApiUserEntity> i
 		}
 
 		//获取登录token
-		ApiTokenEntity tokenEntity = tokenService.createToken(user.getUserid());
+		ApiTokenEntity tokenEntity = tokenService.createToken(user.getSysid());
 
 		Map<String, Object> map = new HashMap<>(2);
 		map.put("token", tokenEntity.getToken());

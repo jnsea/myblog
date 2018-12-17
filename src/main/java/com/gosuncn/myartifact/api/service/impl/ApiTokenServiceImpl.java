@@ -40,7 +40,7 @@ public class ApiTokenServiceImpl extends ServiceImpl<ApiTokenDao, ApiTokenEntity
 	}
 
 	@Override
-	public ApiTokenEntity createToken(long userId) {
+	public ApiTokenEntity createToken(String userId) {
 		//当前时间
 		Date now = new Date();
 		//过期时间
@@ -53,6 +53,7 @@ public class ApiTokenServiceImpl extends ServiceImpl<ApiTokenDao, ApiTokenEntity
 		ApiTokenEntity tokenEntity = new ApiTokenEntity();
 		tokenEntity.setUserid(userId);
 		tokenEntity.setToken(token);
+		tokenEntity.setCreatedtime(now);
 		tokenEntity.setLastupdatedtime(now);
 		tokenEntity.setExpireTime(expireTime);
 		this.insertOrUpdate(tokenEntity);
@@ -61,7 +62,7 @@ public class ApiTokenServiceImpl extends ServiceImpl<ApiTokenDao, ApiTokenEntity
 	}
 
 	@Override
-	public void expireToken(long userId){
+	public void expireToken(String userId){
 		Date now = new Date();
 
 		ApiTokenEntity tokenEntity = new ApiTokenEntity();

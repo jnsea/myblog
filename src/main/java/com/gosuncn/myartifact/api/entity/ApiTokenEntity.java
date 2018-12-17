@@ -47,7 +47,7 @@ public class ApiTokenEntity extends CommonModel implements Serializable {
 	/**
 	 * 用户ID
 	 */
-	private Long userid;
+	private String userid;
 	private String token;
 	/**
 	 * 过期时间

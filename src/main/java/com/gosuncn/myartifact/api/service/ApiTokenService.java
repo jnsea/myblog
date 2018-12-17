@@ -35,12 +35,12 @@ public interface ApiTokenService extends IService<ApiTokenEntity> {
 	 * @param userId  用户ID
 	 * @return        返回token信息
 	 */
-	ApiTokenEntity createToken(long userId);
+	ApiTokenEntity createToken(String userId);
 
 	/**
 	 * 设置token过期
 	 * @param userId 用户ID
 	 */
-	void expireToken(long userId);
+	void expireToken(String userId);
 
 }

@@ -50,7 +50,7 @@ public class ApiUserEntity  extends CommonModel implements Serializable {
 	/**
 	 * 用户ID
 	 */
-	private Long userid;
+	private Long usercode;
 	/**
 	 * 用户名
 	 */

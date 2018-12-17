@@ -47,7 +47,7 @@ public class ApiLoginController {
     @ApiLogin
     @PostMapping("logout")
     @ApiOperation("退出")
-    public ResponseMap logout(@ApiIgnore @RequestAttribute("userId") long userId){
+    public ResponseMap logout(@ApiIgnore @RequestAttribute("userId") String userId){
         tokenService.expireToken(userId);
         return ResponseMap.ok();
     }
